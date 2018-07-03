@@ -3,6 +3,7 @@ const fs = require('fs');
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
@@ -42,4 +43,4 @@ app.get('/bad', (req, res) => {
         errorMessage: 'Could not fulfill this request'
     });
 });
-app.listen(3000);
+app.listen(port);
